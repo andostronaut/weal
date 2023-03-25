@@ -1,11 +1,11 @@
 #!/usr/bin/env node
-'use strict';
-const React = require('react');
-const importJsx = require('import-jsx');
-const {render} = require('ink');
-const meow = require('meow');
+'use strict'
+const React = require('react')
+const importJsx = require('import-jsx')
+const { render } = require('ink')
+const meow = require('meow')
 
-const ui = importJsx('./ui');
+const ui = importJsx('./ui')
 
 const cli = meow(`
 	Usage
@@ -17,6 +17,6 @@ const cli = meow(`
 	Examples
 	  $ terb --name=Jane
 	  Hello, Jane
-`);
+`)
 
-render(React.createElement(ui, cli.flags));
+render(React.createElement(ui, cli.flags))

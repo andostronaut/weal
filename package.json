@@ -1,53 +1,57 @@
 {
-	"name": "terb",
-	"version": "0.0.0",
-	"license": "MIT",
-	"bin": "cli.js",
-	"engines": {
-		"node": ">=10"
-	},
-	"scripts": {
-		"test": "xo && ava"
-	},
-	"files": [
-		"cli.js",
-		"ui.js"
-	],
-	"dependencies": {
-		"import-jsx": "^5.0.0",
-		"ink": "^3.2.0",
-		"meow": "^9.0.0",
-		"react": "^17.0.2"
-	},
-	"ava": {
-		"babel": true,
-		"require": [
-			"@babel/register"
-		]
-	},
-	"babel": {
-		"presets": [
-			"@babel/preset-env",
-			"@babel/preset-react"
-		]
-	},
-	"xo": {
-		"extends": "xo-react",
-		"rules": {
-			"react/prop-types": "off"
-		}
-	},
-	"devDependencies": {
-		"@ava/babel": "^2.0.0",
-		"@babel/preset-env": "^7.20.2",
-		"@babel/preset-react": "^7.18.6",
-		"@babel/register": "^7.21.0",
-		"ava": "^5.2.0",
-		"chalk": "^4.1.2",
-		"eslint-config-xo-react": "^0.27.0",
-		"eslint-plugin-react": "^7.32.2",
-		"eslint-plugin-react-hooks": "^4.6.0",
-		"ink-testing-library": "^3.0.0",
-		"xo": "^0.39.1"
-	}
+    "name": "terb",
+    "version": "0.0.0",
+    "license": "MIT",
+    "bin": "cli.js",
+    "engines": {
+        "node": ">=10"
+    },
+    "scripts": {
+        "test": "xo && ava"
+    },
+    "files": [
+        "cli.js",
+        "ui.js"
+    ],
+    "dependencies": {
+        "eslint": "^8.36.0",
+        "import-jsx": "^5.0.0",
+        "ink": "^3.2.0",
+        "meow": "^9.0.0",
+        "prettier": "^2.8.7",
+        "react": "^17.0.2"
+    },
+    "ava": {
+        "babel": true,
+        "require": [
+            "@babel/register"
+        ]
+    },
+    "babel": {
+        "presets": [
+            "@babel/preset-env",
+            "@babel/preset-react"
+        ]
+    },
+    "xo": {
+        "extends": "xo-react",
+        "rules": {
+            "react/prop-types": "off"
+        }
+    },
+    "devDependencies": {
+        "@ava/babel": "^2.0.0",
+        "@babel/preset-env": "^7.20.2",
+        "@babel/preset-react": "^7.18.6",
+        "@babel/register": "^7.21.0",
+        "ava": "^5.2.0",
+        "chalk": "^4.1.2",
+        "eslint-config-prettier": "^8.8.0",
+        "eslint-config-xo-react": "^0.27.0",
+        "eslint-plugin-prettier": "^4.2.1",
+        "eslint-plugin-react": "^7.32.2",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "ink-testing-library": "^3.0.0",
+        "xo": "^0.39.1"
+    }
 }
