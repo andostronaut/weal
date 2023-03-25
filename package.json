@@ -1,0 +1,101 @@
+{
+    "name": "terb",
+    "description": "Web interface for managing terminal",
+    "version": "1.0.0",
+    "license": "MIT",
+    "bin": {
+        "terb": "index.js"
+    },
+    "author": {
+        "name": "iamando",
+        "email": "iamando@tuta.io"
+    },
+    "keywords": [
+        "terb",
+        "terminal",
+        "web",
+        "interface",
+        "cli"
+    ],
+    "files": [
+        "index.js",
+        "utils"
+    ],
+    "scripts": {
+        "lint": "eslint \"./**/*.{js,ts}\"",
+        "format": "prettier --write \"./**/*.{js,json}\"",
+        "test": "jest",
+        "test:watch": "jest --watch",
+        "test:cov": "jest --coverage",
+        "prepare": "husky install"
+    },
+    "dependencies": {
+        "chalk": "^4.1.2",
+        "cli-alerts": "^1.2.2",
+        "cli-handle-error": "^4.4.0",
+        "cli-handle-unhandled": "^1.1.1",
+        "cli-meow-help": "^3.1.0",
+        "cli-welcome": "^2.2.2",
+        "meow": "^9.0.0"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^17.5.0",
+        "@commitlint/config-conventional": "^17.4.4",
+        "eslint": "^8.36.0",
+        "eslint-plugin-prettier": "^4.2.1",
+        "eslint-plugin-react": "^7.32.2",
+        "husky": "^8.0.0",
+        "jest": "^29.5.0",
+        "lint-staged": "^13.2.0",
+        "prettier": "^2.8.7",
+        "validate-branch-name": "^1.3.0"
+    },
+    "lint-staged": {
+        "*.js": [
+            "eslint . --ext .js --fix",
+            "prettier --write"
+        ]
+    },
+    "validate-branch-name": {
+        "pattern": "^(project-[a-z\\-]+|master|develop|preprod){1}$|^(epic|feature|bugfix|hotfix|chore|experiment|design)\\/([A-Z]{2,4})-([\\dX]+)_([\\w-]+?)$",
+        "errorMsg": "Branch name format : <type>/<issue_ID>_<name>"
+    },
+    "commitlint": {
+        "extends": [
+            "@commitlint/config-conventional"
+        ],
+        "rules": {
+            "type-enum": [
+                2,
+                "always",
+                [
+                    "epic",
+                    "feature",
+                    "bugfix",
+                    "hotfix",
+                    "chore",
+                    "experiment",
+                    "design"
+                ]
+            ]
+        }
+    },
+    "jest": {
+        "moduleFileExtensions": [
+            "js",
+            "json"
+        ],
+        "rootDir": ".",
+        "testRegex": ".*\\.spec\\.js$",
+        "collectCoverageFrom": [
+            "**/*.(t|j)s"
+        ],
+        "coverageDirectory": "./coverage",
+        "coveragePathIgnorePatterns": [
+            "/node_modules/",
+            ".*(stub.ts)$"
+        ],
+        "collectCoverage": false,
+        "testEnvironment": "node"
+    }
+}

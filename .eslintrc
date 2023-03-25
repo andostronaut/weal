@@ -12,7 +12,7 @@
         "sourceType": "module",
         "ecmaVersion": "latest"
     },
-    "extends": ["eslint:recommended", "prettier"],
+    "extends": "eslint:recommended",
     "plugins": ["react", "prettier"],
     "rules": {
         "prettier/prettier": "error",
