@@ -1,6 +1,6 @@
 {
   "name": "terb",
-  "description": "Web interface for managing terminal",
+  "description": "Web interface for terminal",
   "version": "1.0.0",
   "license": "MIT",
   "bin": {
