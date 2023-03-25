@@ -1,6 +1,7 @@
 {
     "env": {
         "browser": true,
+        "commonjs": true,
         "es6": true,
         "node": true
     },
@@ -12,7 +13,7 @@
         "ecmaVersion": "latest"
     },
     "extends": ["eslint:recommended", "prettier"],
-    "plugins": ["react", "prettier", "import-jsx"],
+    "plugins": ["react", "prettier"],
     "rules": {
         "prettier/prettier": "error",
         "interface-name-prefix": "off",
