@@ -1,11 +1,5 @@
 'use strict'
-const React = require('react')
-const { Text } = require('ink')
+import React from 'react'
+import { Text } from 'ink'
 
-const App = ({ name = 'Stranger' }) => (
-    <Text>
-        Hello, <Text color="green">{name}</Text>
-    </Text>
-)
-
-module.exports = App
+export const UI = () => <Text>Hello, world</Text>

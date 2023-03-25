@@ -1,11 +1,12 @@
 #!/usr/bin/env node
 'use strict'
-const React = require('react')
-const importJsx = require('import-jsx')
-const { render } = require('ink')
-const meow = require('meow')
+import React from 'react'
+import { load } from 'import-jsx'
+import { render } from 'ink'
+import meow from 'meow'
+import { UI } from './ui.js'
 
-const ui = importJsx('./ui')
+const ui = load(UI)
 
 const cli = meow(`
 	Usage
