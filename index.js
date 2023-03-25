@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-const init = require('./utils/init')
-const cli = require('./utils/cli')
-const log = require('./utils/log')
+const init = require('./lib/init')
+const cli = require('./lib/cli')
+const log = require('./lib/log')
 
 const input = cli.input
 const flags = cli.flags
