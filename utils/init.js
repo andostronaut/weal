@@ -5,8 +5,8 @@ const unhandled = require('cli-handle-unhandled')
 module.exports = ({ clear = true }) => {
   unhandled()
   welcome({
-    title: `terb`,
-    tagLine: `by iamando`,
+    title: 'terb',
+    tagLine: 'by iamando',
     description: pkg.description,
     version: pkg.version,
     bgColor: '#36BB09',
