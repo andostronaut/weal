@@ -25,7 +25,7 @@
     },
     "overrides": [
         {
-            "files": ["*.ts", "*.js"],
+            "files": ["*.js", "*.jsx"],
             "rules": {
                 "no-shadow": "off",
                 "no-undef": "off",
