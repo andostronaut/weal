@@ -3,31 +3,31 @@ name: build
 on: [push, pull_request]
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest
 
-        strategy:
-            fail-fast: false
+    strategy:
+      fail-fast: false
 
-            matrix:
-                node-version:
-                    - 16.16.0
+      matrix:
+        node-version:
+          - 16.16.0
 
-        steps:
-            - uses: actions/checkout@v3
+    steps:
+      - uses: actions/checkout@v3
 
-            - uses: actions/setup-node@v3
-              with:
-                  node-version: ${{ matrix.node-version }}
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
 
-            - uses: actions/cache@v3
-              with:
-                  path: ~/.npm
-                  key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
-                  restore-keys: |
-                      ${{ runner.OS }}-node-
-                      ${{ runner.OS }}-
+      - uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.OS }}-node-
+            ${{ runner.OS }}-
 
-            - run: npm install --registry=https://registry.npmjs.org
+      - run: npm install --registry=https://registry.npmjs.org
 
-            - run: npm run lint
+      - run: npm run lint

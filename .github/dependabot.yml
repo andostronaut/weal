@@ -1,26 +1,26 @@
 version: 2
 
 updates:
-    - package-ecosystem: 'github-actions'
-      directory: '/'
-      schedule:
-          interval: 'daily'
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'daily'
 
-    - package-ecosystem: npm
-      directory: '/'
-      schedule:
-          interval: 'daily'
+  - package-ecosystem: npm
+    directory: '/'
+    schedule:
+      interval: 'daily'
 
-      open-pull-requests-limit: 10
+    open-pull-requests-limit: 10
 
-      versioning-strategy: increase-if-necessary
+    versioning-strategy: increase-if-necessary
 
-      reviewers:
-          - 'iamando'
+    reviewers:
+      - 'iamando'
 
-      assignees:
-          - 'iamando'
+    assignees:
+      - 'iamando'
 
-      labels:
-          - 'dependencies'
-          - 'npm'
+    labels:
+      - 'dependencies'
+      - 'npm'
