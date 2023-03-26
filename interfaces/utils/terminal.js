@@ -1,10 +1,10 @@
 const React = require('react')
-const Terminal = require('react-terminal-ui')
-
-const TerminalComponent = Terminal.default
-const TerminalInput = Terminal.TerminalInput
-const TerminalOutput = Terminal.TerminalOutput
-const ColorMode = Terminal.ColorMode
+const {
+  default: TerminalComponent,
+  TerminalInput,
+  TerminalOutput,
+  ColorMode
+} = require('react-terminal-ui')
 
 const TerminalUI = () => {
   const [mode, setMode] = React.useState('light')
