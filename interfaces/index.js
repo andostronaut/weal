@@ -1,8 +1,16 @@
 const React = require('react')
 const ReactDOM = require('react-dom')
 
+require('./styles/main.css')
+
+const Terminal = require('./utils/terminal')
+
 const App = () => {
-  return <h1>This is my React app!</h1>
+  return (
+    <div className="terb-interface-container">
+      <Terminal />
+    </div>
+  )
 }
 
 ReactDOM.render(<App />, document.getElementById('app'))
