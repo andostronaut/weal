@@ -8,6 +8,9 @@ const htmlPlugin = new HtmlWebPackPlugin({
 
 module.exports = {
   mode: 'development',
+  devServer: {
+    open: true
+  },
   entry: './interfaces/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
