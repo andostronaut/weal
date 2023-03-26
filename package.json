@@ -148,7 +148,8 @@
       "jsx-quotes": [
         "error",
         "prefer-single"
-      ]
+      ],
+      "react/react-in-jsx-scope": "off"
     },
     "overrides": [
       {
