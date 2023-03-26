@@ -7,6 +7,6 @@ body {
 }
 
 .react-terminal-wrapper {
-  border-radius: 0px !important;
+  border-radius: 0 !important;
   height: 100vh !important;
 }
