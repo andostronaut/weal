@@ -10,7 +10,7 @@ const TerminalUI = () => {
   const [mode, setMode] = React.useState('light')
   const [history, setHistory] = React.useState([
     <TerminalOutput key='welcome'>Welcome to terb interface</TerminalOutput>,
-    <TerminalOutput key='empty'></TerminalOutput>,
+    <TerminalOutput key='empty'>-------------------------</TerminalOutput>,
     <TerminalOutput key='commands'>The following example commands are provided:</TerminalOutput>,
     <TerminalOutput key='mode'>'mode' will change the terminal theme.</TerminalOutput>,
     <TerminalOutput key='clear'>'clear' will clear the terminal.</TerminalOutput>
@@ -22,7 +22,8 @@ const TerminalUI = () => {
   }
 
   const handleInput = (terminalInput) => {
-    let inputs = [...lineData]
+    let inputs = [...history]
+
     inputs.push(<TerminalInput>{terminalInput}</TerminalInput>)
 
     if (terminalInput.toLocaleLowerCase().trim() === 'mode=light') {
@@ -30,9 +31,9 @@ const TerminalUI = () => {
     } else if (terminalInput.toLocaleLowerCase().trim() === 'mode=dark') {
       setMode('dark')
     } else if (terminalInput.toLocaleLowerCase().trim() === 'clear') {
-      ld = []
+      inputs = []
     } else if (terminalInput) {
-      ld.push(<TerminalOutput>Unrecognized command</TerminalOutput>)
+      inputs.push(<TerminalOutput key='unrecognized-command'>Unrecognized command</TerminalOutput>)
     }
 
     setHistory(inputs)
