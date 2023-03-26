@@ -1,9 +1,9 @@
 const React = require('react')
 const Terminal = require('react-terminal-ui')
 
-const ColorMode = Terminal.ColorMode
 const TerminalComponent = Terminal.default
 const TerminalOutput = Terminal.TerminalOutput
+const ColorMode = Terminal.ColorMode
 
 const TerminalUI = () => {
   return (
