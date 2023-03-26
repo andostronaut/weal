@@ -1,15 +1,12 @@
 const path = require('path')
-const HtmlWebPackPlugin = require('html-webpack-plugin')
-
-const htmlPlugin = new HtmlWebPackPlugin({
-  template: './interfaces/index.html',
-  filename: './index.html'
-})
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   mode: 'development',
+  devtool: 'inline-source-map',
   devServer: {
-    open: true
+    open: true,
+    static: './dist'
   },
   entry: './interfaces/index.js',
   output: {
@@ -17,17 +14,13 @@ module.exports = {
     filename: 'bundle.js'
   },
   resolve: {
+    extensions: ['.js', '.jsx'],
     alias: {
       src: path.resolve(__dirname, 'interfaces')
     }
   },
   module: {
     rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader'
-      },
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
@@ -39,5 +32,11 @@ module.exports = {
       }
     ]
   },
-  plugins: [htmlPlugin]
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'interfaces/public/index.html',
+      favicon: 'interfaces/public/favicon.ico',
+      manifest: 'interfaces/public/manifest.json'
+    })
+  ]
 }
