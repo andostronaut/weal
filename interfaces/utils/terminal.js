@@ -1,15 +1,19 @@
 const React = require('react')
 const Terminal = require('react-terminal-ui')
 
+const ColorMode = Terminal.ColorMode
+const TerminalComponent = Terminal.default
+const TerminalOutput = Terminal.TerminalOutput
+
 const TerminalUI = () => {
   return (
-    <Terminal.default
+    <TerminalComponent
       name='Terb'
-      colorMode={Terminal.ColorMode.Dark}
+      colorMode={ColorMode.Dark}
       onInput={(terminalInput) => console.log(`New terminal input received: '${terminalInput}'`)}
     >
-      <Terminal.TerminalOutput>Welcome to terb interface</Terminal.TerminalOutput>
-    </Terminal.default>
+      <TerminalOutput>Welcome to terb interface</TerminalOutput>
+    </TerminalComponent>
   )
 }
 
