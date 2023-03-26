@@ -3,7 +3,7 @@ const React = require('react')
 
 const TerminalUI = () => {
   return (
-    <div className="container">
+    <div className='container'>
       {/* <Terminal
         name="Terb"
         colorMode={Terminal.ColorMode.Light}

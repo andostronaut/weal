@@ -144,7 +144,11 @@
       "no-unused-vars": "warn",
       "consistent-type-definitions": "off",
       "no-undef": "error",
-      "no-use-before-define": "error"
+      "no-use-before-define": "error",
+      "jsx-quotes": [
+        "error",
+        "prefer-single"
+      ]
     },
     "overrides": [
       {
@@ -172,6 +176,7 @@
     "trailingComma": "none",
     "arrowParens": "always",
     "singleQuote": true,
+    "jsxSingleQuote": true,
     "printWidth": 100,
     "useTabs": false,
     "semi": false,

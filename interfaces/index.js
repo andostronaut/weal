@@ -7,7 +7,7 @@ const Terminal = require('./utils/terminal')
 
 const App = () => {
   return (
-    <div className="terb-interface-container">
+    <div className='terb-interface-container'>
       <Terminal />
     </div>
   )
