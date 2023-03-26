@@ -181,6 +181,18 @@
     "useTabs": false,
     "semi": false,
     "quoteProps": "consistent",
-    "bracketSpacing": true
+    "bracketSpacing": true,
+    "overrides": [
+      {
+        "files": [
+          "**/*.css",
+          "**/*.scss",
+          "**/*.html"
+        ],
+        "options": {
+          "singleQuote": false
+        }
+      }
+    ]
   }
 }
