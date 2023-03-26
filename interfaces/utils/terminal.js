@@ -6,14 +6,16 @@ const {
   ColorMode
 } = require('react-terminal-ui')
 
+const { v4: uuidv4 } = require('uuid')
+
 const Terminal = () => {
   const [mode, setMode] = React.useState('light')
   const [history, setHistory] = React.useState([
-    <TerminalOutput key='welcome'>Welcome to terb interface</TerminalOutput>,
-    <TerminalOutput key='empty'>-------------------------</TerminalOutput>,
-    <TerminalOutput key='commands'>The following example commands are provided:</TerminalOutput>,
-    <TerminalOutput key='mode'>'mode' will change the terminal theme.</TerminalOutput>,
-    <TerminalOutput key='clear'>'clear' will clear the terminal.</TerminalOutput>
+    <TerminalOutput key={uuidv4()}>Welcome to terb interface</TerminalOutput>,
+    <TerminalOutput key={uuidv4()}>-------------------------</TerminalOutput>,
+    <TerminalOutput key={uuidv4()}>The following example commands are provided:</TerminalOutput>,
+    <TerminalOutput key={uuidv4()}>'mode' will change the terminal theme.</TerminalOutput>,
+    <TerminalOutput key={uuidv4()}>'clear' will clear the terminal.</TerminalOutput>
   ])
 
   const themeByMode = {
@@ -24,7 +26,7 @@ const Terminal = () => {
   const handleInput = (terminalInput) => {
     let inputs = [...history]
 
-    inputs.push(<TerminalInput>{terminalInput}</TerminalInput>)
+    inputs.push(<TerminalInput key={uuidv4()}>{terminalInput}</TerminalInput>)
 
     if (terminalInput.toLocaleLowerCase().trim() === 'mode=light') {
       setMode('light')
@@ -33,7 +35,7 @@ const Terminal = () => {
     } else if (terminalInput.toLocaleLowerCase().trim() === 'clear') {
       inputs = []
     } else if (terminalInput) {
-      inputs.push(<TerminalOutput key='unrecognized-command'>Unrecognized command</TerminalOutput>)
+      inputs.push(<TerminalOutput key={uuidv4()}>Unrecognized command</TerminalOutput>)
     }
 
     setHistory(inputs)
