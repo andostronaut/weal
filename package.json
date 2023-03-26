@@ -43,7 +43,8 @@
     "meow": "^9.0.0",
     "ora": "^5.4.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-terminal-ui": "^1.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.21.3",
@@ -143,7 +144,11 @@
       "no-unused-vars": "warn",
       "consistent-type-definitions": "off",
       "no-undef": "error",
-      "no-use-before-define": "error"
+      "no-use-before-define": "error",
+      "jsx-quotes": [
+        "error",
+        "prefer-single"
+      ]
     },
     "overrides": [
       {
@@ -171,10 +176,23 @@
     "trailingComma": "none",
     "arrowParens": "always",
     "singleQuote": true,
+    "jsxSingleQuote": true,
     "printWidth": 100,
     "useTabs": false,
     "semi": false,
     "quoteProps": "consistent",
-    "bracketSpacing": true
+    "bracketSpacing": true,
+    "overrides": [
+      {
+        "files": [
+          "**/*.css",
+          "**/*.scss",
+          "**/*.html"
+        ],
+        "options": {
+          "singleQuote": false
+        }
+      }
+    ]
   }
 }
