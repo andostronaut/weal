@@ -1,12 +1,12 @@
 const React = require('react')
 const {
-  default: TerminalComponent,
+  default: TerminalUI,
   TerminalInput,
   TerminalOutput,
   ColorMode
 } = require('react-terminal-ui')
 
-const TerminalUI = () => {
+const Terminal = () => {
   const [mode, setMode] = React.useState('light')
   const [history, setHistory] = React.useState([
     <TerminalOutput key='welcome'>Welcome to terb interface</TerminalOutput>,
@@ -40,10 +40,10 @@ const TerminalUI = () => {
   }
 
   return (
-    <TerminalComponent name='Terb' colorMode={themeByMode[mode]} onInput={handleInput}>
+    <TerminalUI name='Terb' colorMode={themeByMode[mode]} onInput={handleInput}>
       {history}
-    </TerminalComponent>
+    </TerminalUI>
   )
 }
 
-module.exports = TerminalUI
+module.exports = Terminal
