@@ -5,3 +5,8 @@ body {
   padding: 0;
   font-family: Poppins, sans-serif;
 }
+
+.react-terminal-wrapper {
+  border-radius: 0 !important;
+  height: 100vh !important;
+}

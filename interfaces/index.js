@@ -1,16 +1,15 @@
 const React = require('react')
-const ReactDOM = require('react-dom')
+const { createRoot } = require('react-dom/client')
 
 require('./styles/main.css')
 
-const Terminal = require('./utils/terminal')
+const rootElement = document.getElementById('root')
+const root = createRoot(rootElement)
 
-const App = () => {
-  return (
-    <div className='terb-interface-container'>
-      <Terminal />
-    </div>
-  )
-}
+const App = require('./app')
 
-ReactDOM.render(<App />, document.getElementById('root'))
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+)
