@@ -6,7 +6,10 @@ module.exports = {
   devtool: 'inline-source-map',
   devServer: {
     open: true,
-    static: './dist'
+    static: [
+      { directory: path.join(__dirname, 'interfaces/dist') },
+      { directory: path.join(__dirname, 'interfaces/public') }
+    ]
   },
   entry: './interfaces/index.js',
   output: {
@@ -35,6 +38,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: 'interfaces/public/index.html',
+      inject: true,
       favicon: 'interfaces/public/favicon.ico',
       manifest: 'interfaces/public/manifest.json'
     })
