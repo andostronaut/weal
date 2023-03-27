@@ -22,7 +22,8 @@
     "lib",
     "interfaces",
     "docs",
-    "readme.md"
+    "webpack.config.js",
+    ".babelrc"
   ],
   "scripts": {
     "lint": "eslint \"./**/*.{js,ts}\"",
