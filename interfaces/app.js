@@ -5,27 +5,57 @@ const { v4: uuidv4 } = require('uuid')
 const { defaultOutputs } = require('./components/outputs')
 
 const { defaultTheme, switchTheme } = require('./utils/themes')
-const { APP_NAME, KEY_MODE, KEY_CLEAR } = require('./constants')
+const { APP_NAME, KEY_MODE, KEY_CLEAR, KEY_CODE_ARROW_UP } = require('./constants')
 
 const App = () => {
   const [theme, setTheme] = React.useState(null)
+  const [inputs, setInputs] = React.useState([])
   const [history, setHistory] = React.useState(defaultOutputs)
 
-  const handleInput = (terminalInput) => {
-    let inputs = [...history]
+  const grpInput = (input) => {
+    const ipts = [...inputs]
 
-    inputs.push(<TerminalInput key={uuidv4()}>{terminalInput}</TerminalInput>)
+    ipts.push(<TerminalInput key={uuidv4()}>{input}</TerminalInput>)
 
-    if (terminalInput.toLocaleLowerCase().trim().slice(0, 4) === KEY_MODE) {
-      setTheme(switchTheme(terminalInput))
-    } else if (terminalInput.toLocaleLowerCase().trim() === KEY_CLEAR) {
-      inputs = []
-    } else if (terminalInput) {
-      inputs.push(<TerminalOutput key={uuidv4()}>Unrecognized command</TerminalOutput>)
+    setInputs(ipts)
+  }
+
+  const grpHistory = (input) => {
+    let lns = [...history]
+
+    lns.push(<TerminalInput key={uuidv4()}>{input}</TerminalInput>)
+
+    if (input.toLocaleLowerCase().trim().slice(0, 4) === KEY_MODE) {
+      setTheme(switchTheme(input))
+    } else if (input.toLocaleLowerCase().trim() === KEY_CLEAR) {
+      lns = []
+    } else if (input) {
+      lns.push(<TerminalOutput key={uuidv4()}>Unrecognized command</TerminalOutput>)
     }
 
-    setHistory(inputs)
+    setHistory(lns)
   }
+
+  const handleInput = (input) => {
+    grpInput(input)
+    grpHistory(input)
+  }
+
+  React.useEffect(() => {
+    window.addEventListener(
+      'keydown',
+      (event) => {
+        if (event.keyCode === KEY_CODE_ARROW_UP) {
+          const lst = inputs.at(-1)
+          if (lst) {
+            const lnInput = document.querySelector('.react-terminal-active-input')
+            lnInput.append(lst.props.children)
+          }
+        }
+      },
+      false
+    )
+  }, [inputs])
 
   return (
     <TerminalUI name={APP_NAME} colorMode={theme ?? defaultTheme} onInput={handleInput}>

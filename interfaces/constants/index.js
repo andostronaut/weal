@@ -18,6 +18,8 @@ const DEFAULT_OUTPUTS_LIST = [
   '`clear` will clear the terminal.'
 ]
 
+const KEY_CODE_ARROW_UP = 38
+
 module.exports = {
   APP_NAME,
   KEY_MODE,
@@ -26,5 +28,6 @@ module.exports = {
   CMD_MODE_DARK,
   LIGHT_THEME,
   DARK_THEME,
-  DEFAULT_OUTPUTS_LIST
+  DEFAULT_OUTPUTS_LIST,
+  KEY_CODE_ARROW_UP
 }
