@@ -11,3 +11,7 @@ body {
   height: 100vh !important;
   font-size: 14px !important;
 }
+
+.react-terminal:last-child {
+  padding-bottom: 50px;
+}

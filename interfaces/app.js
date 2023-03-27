@@ -45,7 +45,12 @@ const App = () => {
   }
 
   return (
-    <TerminalUI name={APP_NAME} colorMode={theme ?? defaultTheme} onInput={handleInput}>
+    <TerminalUI
+      name={APP_NAME}
+      colorMode={theme ?? defaultTheme}
+      onInput={handleInput}
+      height='500px'
+    >
       {history}
     </TerminalUI>
   )
