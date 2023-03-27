@@ -5,7 +5,7 @@ const { v4: uuidv4 } = require('uuid')
 const { defaultOutputs } = require('./components/outputs')
 
 const { defaultTheme, switchTheme } = require('./utils/themes')
-const { APP_NAME, KEY_MODE, KEY_CLEAR, KEY_CODE_ARROW_UP } = require('./constants')
+const { APP_NAME, KEY_MODE, KEY_CLEAR } = require('./constants')
 
 const App = () => {
   const [theme, setTheme] = React.useState(null)
@@ -40,22 +40,6 @@ const App = () => {
     grpInput(input)
     grpHistory(input)
   }
-
-  React.useEffect(() => {
-    window.addEventListener(
-      'keydown',
-      (event) => {
-        if (event.keyCode === KEY_CODE_ARROW_UP) {
-          const lst = inputs.at(-1)
-          if (lst) {
-            const lnInput = document.querySelector('.react-terminal-active-input')
-            lnInput.append(lst.props.children)
-          }
-        }
-      },
-      false
-    )
-  }, [inputs])
 
   return (
     <TerminalUI name={APP_NAME} colorMode={theme ?? defaultTheme} onInput={handleInput}>
