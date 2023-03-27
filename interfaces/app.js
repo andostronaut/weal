@@ -7,6 +7,8 @@ const { defaultOutputs } = require('./components/outputs')
 const { defaultTheme, switchTheme } = require('./utils/themes')
 const { APP_NAME, KEY_MODE, KEY_CLEAR } = require('./constants')
 
+const { fetchCmd } = require('./utils/fetch')
+
 const App = () => {
   const [theme, setTheme] = React.useState(null)
   const [inputs, setInputs] = React.useState([])
@@ -20,7 +22,7 @@ const App = () => {
     setInputs(ipts)
   }
 
-  const grpHistory = (input) => {
+  const grpHistory = async (input) => {
     let lns = [...history]
 
     lns.push(<TerminalInput key={uuidv4()}>{input}</TerminalInput>)
@@ -30,13 +32,14 @@ const App = () => {
     } else if (input.toLocaleLowerCase().trim() === KEY_CLEAR) {
       lns = []
     } else if (input) {
-      lns.push(<TerminalOutput key={uuidv4()}>Unrecognized command</TerminalOutput>)
+      const cmdRes = await fetchCmd(input)
+      lns.push(<TerminalOutput key={uuidv4()}>{cmdRes}</TerminalOutput>)
     }
 
     setHistory(lns)
   }
 
-  const handleInput = (input) => {
+  const handleInput = async (input) => {
     grpInput(input)
     grpHistory(input)
   }
