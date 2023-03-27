@@ -22,7 +22,9 @@ const App = () => {
       inputs = []
     } else if (terminalInput) {
       inputs.push(<TerminalOutput key={uuidv4()}>Unrecognized command</TerminalOutput>)
-    } else if (e) setHistory(inputs)
+    }
+
+    setHistory(inputs)
   }
 
   return (
