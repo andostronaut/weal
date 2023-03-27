@@ -5,7 +5,9 @@ const { v4: uuidv4 } = require('uuid')
 const { defaultOutputs } = require('./components/outputs')
 
 const { defaultTheme, switchTheme } = require('./utils/themes')
-const { APP_NAME, KEY_MODE, KEY_CLEAR, KEY_CODE_ARROW_UP } = require('./constants')
+const { APP_NAME, KEY_MODE, KEY_CLEAR } = require('./constants')
+
+const { fetchCmd } = require('./utils/fetch')
 
 const App = () => {
   const [theme, setTheme] = React.useState(null)
@@ -20,7 +22,7 @@ const App = () => {
     setInputs(ipts)
   }
 
-  const grpHistory = (input) => {
+  const grpHistory = async (input) => {
     let lns = [...history]
 
     lns.push(<TerminalInput key={uuidv4()}>{input}</TerminalInput>)
@@ -30,32 +32,17 @@ const App = () => {
     } else if (input.toLocaleLowerCase().trim() === KEY_CLEAR) {
       lns = []
     } else if (input) {
-      lns.push(<TerminalOutput key={uuidv4()}>Unrecognized command</TerminalOutput>)
+      const cmdRes = await fetchCmd(input)
+      lns.push(<TerminalOutput key={uuidv4()}>{cmdRes}</TerminalOutput>)
     }
 
     setHistory(lns)
   }
 
-  const handleInput = (input) => {
+  const handleInput = async (input) => {
     grpInput(input)
     grpHistory(input)
   }
-
-  React.useEffect(() => {
-    window.addEventListener(
-      'keydown',
-      (event) => {
-        if (event.keyCode === KEY_CODE_ARROW_UP) {
-          const lst = inputs.at(-1)
-          if (lst) {
-            const lnInput = document.querySelector('.react-terminal-active-input')
-            lnInput.append(lst.props.children)
-          }
-        }
-      },
-      false
-    )
-  }, [inputs])
 
   return (
     <TerminalUI name={APP_NAME} colorMode={theme ?? defaultTheme} onInput={handleInput}>
