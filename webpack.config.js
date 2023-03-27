@@ -9,7 +9,9 @@ module.exports = {
     static: [
       { directory: path.join(__dirname, 'interfaces/dist') },
       { directory: path.join(__dirname, 'interfaces/public') }
-    ]
+    ],
+    host: '127.0.0.1',
+    port: 3222
   },
   entry: './interfaces/index.js',
   output: {

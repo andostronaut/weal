@@ -1,5 +1,5 @@
 const fetchCmd = async (input) => {
-  const host = 'http://localhost:5000'
+  const host = 'http://localhost:3221'
 
   try {
     const res = await fetch(host + '/process/' + input)
