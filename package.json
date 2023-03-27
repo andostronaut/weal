@@ -21,7 +21,8 @@
     "index.js",
     "lib",
     "interfaces",
-    "docs"
+    "docs",
+    "readme.md"
   ],
   "scripts": {
     "lint": "eslint \"./**/*.{js,ts}\"",
@@ -29,6 +30,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
+    "server:start": "node lib/process/backend.js",
     "interface:start": "webpack serve --config webpack.config.js",
     "prepare": "husky install"
   },
