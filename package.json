@@ -30,8 +30,8 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
-    "server:debug": "nodemon lib/process/backend.js",
-    "server:start": "node lib/process/backend.js",
+    "backend:debug": "nodemon lib/process/backend.js",
+    "backend:start": "node lib/process/backend.js",
     "interface:start": "webpack serve --config webpack.config.js",
     "prepare": "husky install"
   },
