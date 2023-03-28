@@ -1,17 +1,17 @@
 {
-  "name": "terb",
+  "name": "weal",
   "description": "Web interface for terminal",
   "version": "1.0.0",
   "license": "MIT",
   "bin": {
-    "terb": "index.js"
+    "weal": "index.js"
   },
   "author": {
     "name": "iamando",
     "email": "iamando@tuta.io"
   },
   "keywords": [
-    "terb",
+    "weal",
     "terminal",
     "web",
     "interface",
