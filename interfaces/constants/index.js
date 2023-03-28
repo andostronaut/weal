@@ -20,6 +20,8 @@ const DEFAULT_OUTPUTS_LIST = [
 
 const KEY_CODE_ARROW_UP = 38
 
+const TERMINAL_HEIGHT = 500
+
 module.exports = {
   APP_NAME,
   KEY_MODE,
@@ -29,5 +31,6 @@ module.exports = {
   LIGHT_THEME,
   DARK_THEME,
   DEFAULT_OUTPUTS_LIST,
-  KEY_CODE_ARROW_UP
+  KEY_CODE_ARROW_UP,
+  TERMINAL_HEIGHT
 }

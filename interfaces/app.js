@@ -5,7 +5,7 @@ const { v4: uuidv4 } = require('uuid')
 const { defaultOutputs } = require('./components/outputs')
 
 const { defaultTheme, switchTheme } = require('./utils/themes')
-const { APP_NAME, KEY_MODE, KEY_CLEAR } = require('./constants')
+const { APP_NAME, KEY_MODE, KEY_CLEAR, TERMINAL_HEIGHT } = require('./constants')
 
 const { fetchCmd } = require('./utils/fetch')
 
@@ -49,7 +49,7 @@ const App = () => {
       name={APP_NAME}
       colorMode={theme ?? defaultTheme}
       onInput={handleInput}
-      height='500px'
+      height={TERMINAL_HEIGHT}
     >
       {history}
     </TerminalUI>
