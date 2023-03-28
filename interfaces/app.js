@@ -5,12 +5,14 @@ const { v4: uuidv4 } = require('uuid')
 const { defaultOutputs } = require('./components/outputs')
 
 const { defaultTheme, switchTheme } = require('./utils/themes')
-const { APP_NAME, KEY_MODE, KEY_CLEAR, TERMINAL_HEIGHT } = require('./constants')
+const { APP_NAME, KEY_MODE, KEY_CLEAR, TERMINAL_HEIGHT, KEY_THEME } = require('./constants')
 
 const { fetchCmd } = require('./utils/fetch')
 
+const { getSessionStorage, setSessionStorage } = require('./utils/storage')
+
 const App = () => {
-  const [theme, setTheme] = React.useState(null)
+  const [theme, setTheme] = React.useState(getSessionStorage(KEY_THEME))
   const [inputs, setInputs] = React.useState([])
   const [history, setHistory] = React.useState(defaultOutputs)
 
@@ -28,8 +30,11 @@ const App = () => {
     lns.push(<TerminalInput key={uuidv4()}>{input}</TerminalInput>)
 
     if (input.toLocaleLowerCase().trim().slice(0, 4) === KEY_MODE) {
-      setTheme(switchTheme(input))
-    } else if (input.toLocaleLowerCase().trim() === KEY_CLEAR) {
+      const th = switchTheme(input)
+      setTheme(th)
+      setSessionStorage(KEY_THEME, th)
+    }
+    if (input.toLocaleLowerCase().trim() === KEY_CLEAR) {
       lns = []
     } else if (input) {
       const cmdRes = await fetchCmd(input)

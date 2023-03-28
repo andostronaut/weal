@@ -22,6 +22,10 @@ const KEY_CODE_ARROW_UP = 38
 
 const TERMINAL_HEIGHT = 500
 
+const KEY_THEME = 'theme'
+
+const BASIC_CMDS = ['mode --light', 'mode --dark', 'clear']
+
 module.exports = {
   APP_NAME,
   KEY_MODE,
@@ -32,5 +36,7 @@ module.exports = {
   DARK_THEME,
   DEFAULT_OUTPUTS_LIST,
   KEY_CODE_ARROW_UP,
-  TERMINAL_HEIGHT
+  TERMINAL_HEIGHT,
+  KEY_THEME,
+  BASIC_CMDS
 }
