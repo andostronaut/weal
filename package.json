@@ -1,7 +1,7 @@
 {
   "name": "weal",
   "description": "Web interface for terminal",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "bin": {
     "weal": "index.js"
@@ -10,8 +10,14 @@
     "name": "iamando",
     "email": "iamando@tuta.io"
   },
-  "homepage": "https://github.com/iamando/weal",
-  "repository": "https://github.com/iamando/weal.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iamando/weal.git"
+  },
+  "bugs": {
+    "url": "https://github.com/iamando/weal/issues"
+  },
+  "homepage": "https://github.com/iamando/weal#readme",
   "keywords": [
     "weal",
     "terminal",
@@ -35,7 +41,8 @@
     "test:cov": "jest --coverage",
     "backend:debug": "nodemon lib/process/backend.js",
     "backend:start": "node lib/process/backend.js",
-    "interface:start": "webpack serve --config webpack.config.js",
+    "interface:start": "webpack serve --mode development",
+    "interface:build": "webpack --mode production",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -79,134 +86,5 @@
     "webpack": "^5.76.3",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.13.1"
-  },
-  "lint-staged": {
-    "*.js": [
-      "eslint . --ext .js --fix",
-      "prettier --write"
-    ]
-  },
-  "validate-branch-name": {
-    "pattern": "^(project-[a-z\\-]+|master|develop|preprod){1}$|^(epic|feature|bugfix|hotfix|chore|experiment|design)\\/([A-Z]{2,4})-([\\dX]+)_([\\w-]+?)$",
-    "errorMsg": "Branch name format : <type>/<issue_ID>_<name>"
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ],
-    "rules": {
-      "type-enum": [
-        2,
-        "always",
-        [
-          "epic",
-          "feature",
-          "bugfix",
-          "hotfix",
-          "chore",
-          "experiment",
-          "design"
-        ]
-      ]
-    }
-  },
-  "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "json"
-    ],
-    "rootDir": ".",
-    "testRegex": ".*\\.spec\\.js$",
-    "collectCoverageFrom": [
-      "**/*.(t|j)s"
-    ],
-    "coverageDirectory": "./coverage",
-    "coveragePathIgnorePatterns": [
-      "/node_modules/",
-      ".*(stub.ts)$"
-    ],
-    "collectCoverage": false,
-    "testEnvironment": "node"
-  },
-  "eslintConfig": {
-    "env": {
-      "browser": true,
-      "commonjs": true,
-      "es2021": true,
-      "node": true
-    },
-    "extends": [
-      "eslint:recommended",
-      "plugin:react/recommended"
-    ],
-    "plugins": [
-      "react"
-    ],
-    "parserOptions": {
-      "ecmaFeatures": {
-        "jsx": true
-      },
-      "ecmaVersion": "latest"
-    },
-    "rules": {
-      "interface-name-prefix": "off",
-      "explicit-function-return-type": "off",
-      "explicit-module-boundary-types": "off",
-      "no-unused-vars": "warn",
-      "consistent-type-definitions": "off",
-      "no-undef": "error",
-      "no-use-before-define": "error",
-      "jsx-quotes": [
-        "error",
-        "prefer-single"
-      ],
-      "react/react-in-jsx-scope": "off",
-      "react/jsx-key": "error",
-      "react/no-unescaped-entities": "off"
-    },
-    "overrides": [
-      {
-        "files": [
-          "*.ts",
-          "*.js"
-        ],
-        "rules": {
-          "no-shadow": "off",
-          "no-undef": "off",
-          "semi": 0
-        }
-      }
-    ],
-    "ignorePatterns": [
-      "node_modules/"
-    ],
-    "settings": {
-      "react": {
-        "version": "latest"
-      }
-    }
-  },
-  "prettier": {
-    "trailingComma": "none",
-    "arrowParens": "always",
-    "singleQuote": true,
-    "jsxSingleQuote": true,
-    "printWidth": 100,
-    "useTabs": false,
-    "semi": false,
-    "quoteProps": "consistent",
-    "bracketSpacing": true,
-    "overrides": [
-      {
-        "files": [
-          "**/*.css",
-          "**/*.scss",
-          "**/*.html"
-        ],
-        "options": {
-          "singleQuote": false
-        }
-      }
-    ]
   }
 }

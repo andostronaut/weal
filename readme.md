@@ -47,4 +47,4 @@ Weal is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 ## License
 
-Weal is [MIT licensed](license).
+Weal is [MIT licensed](LICENSE).

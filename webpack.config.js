@@ -15,7 +15,7 @@ module.exports = {
   },
   entry: './interfaces/index.js',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'interfaces/dist'),
     filename: 'bundle.js'
   },
   resolve: {
