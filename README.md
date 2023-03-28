@@ -8,7 +8,7 @@
 
 Web interface for terminal
 
-![Demo](https://github.com/iamando/weal/docs/weal.png)
+![Demo](docs/weal.png)
 
 ## Install
 
