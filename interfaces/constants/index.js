@@ -1,4 +1,4 @@
-const APP_NAME = 'Terb'
+const APP_NAME = 'Weal'
 
 const KEY_MODE = 'mode'
 const KEY_CLEAR = 'clear'
@@ -10,7 +10,7 @@ const LIGHT_THEME = 'light'
 const DARK_THEME = 'dark'
 
 const DEFAULT_OUTPUTS_LIST = [
-  'Welcome to terb interface',
+  'Welcome to weal interface',
   '-------------------------',
   'The following example commands are provided:',
   '`mode --light`` will change to light theme.',
