@@ -43,6 +43,7 @@
     "backend:start": "node lib/process/backend.js",
     "interface:start": "webpack serve --mode development",
     "interface:build": "webpack --mode production",
+    "interface:build:start": "http-server ./interfaces/dist -p 3222 -o --silent",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -55,6 +56,7 @@
     "cors": "^2.8.5",
     "execa": "^4.1.0",
     "express": "^4.18.2",
+    "http-server": "^14.1.1",
     "meow": "^9.0.0",
     "node-fetch": "^3.3.1",
     "ora": "^5.4.1",
