@@ -10,6 +10,8 @@
     "name": "iamando",
     "email": "iamando@tuta.io"
   },
+  "homepage": "https://github.com/iamando/weal",
+  "repository": "https://github.com/iamando/weal.git",
   "keywords": [
     "weal",
     "terminal",
