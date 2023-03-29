@@ -1,7 +1,7 @@
 const React = require('react')
 const { TerminalOutput } = require('react-terminal-ui')
 
-const { _id } = require('./utils/uuid')
+const { _id } = require('../utils/uuid')
 
 const defaultOutputs = [
   <TerminalOutput key={_id()}>Welcome to weal interface</TerminalOutput>,
