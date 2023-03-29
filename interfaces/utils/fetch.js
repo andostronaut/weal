@@ -1,8 +1,8 @@
 const { BASIC_CMDS, CMD_MODE_LIGHT, CMD_MODE_DARK } = require('../constants')
 
-const fetchCmd = async (input) => {
-  const host = 'http://localhost:3221'
+const { ENV } = require('./env')
 
+const fetchCmd = async (input) => {
   if (BASIC_CMDS.includes(input)) {
     if (input === CMD_MODE_LIGHT) {
       return 'Light mode activated'
@@ -12,7 +12,7 @@ const fetchCmd = async (input) => {
   }
 
   try {
-    const res = await fetch(host + '/process/' + input)
+    const res = await fetch(`${ENV.BACKEND_URI}/process/${input}`)
     const cmdRes = await res.text()
 
     return cmdRes
