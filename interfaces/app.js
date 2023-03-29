@@ -1,7 +1,7 @@
 const React = require('react')
 const { default: TerminalUI, TerminalInput, TerminalOutput } = require('react-terminal-ui')
 
-const { defaultOutputs } = require('./components/outputs')
+const DefaultOutputs = require('./components/outputs')
 
 const { defaultTheme, switchTheme } = require('./utils/themes')
 const { APP_NAME, KEY_MODE, KEY_CLEAR, TERMINAL_HEIGHT, KEY_THEME } = require('./constants')
@@ -15,7 +15,7 @@ const { _id } = require('./utils/uuid')
 const App = () => {
   const [theme, setTheme] = React.useState(getSessionStorage(KEY_THEME))
   const [inputs, setInputs] = React.useState([])
-  const [history, setHistory] = React.useState(defaultOutputs)
+  const [history, setHistory] = React.useState([])
 
   const grpInput = (input) => {
     const ipts = [...inputs]
@@ -49,6 +49,14 @@ const App = () => {
     grpInput(input)
     grpHistory(input)
   }
+
+  React.useEffect(() => {
+    const hs = [...history]
+    if (Array.isArray(history) && history.length === 0) {
+      hs.push(<DefaultOutputs key={_id()} />)
+      setHistory(hs)
+    }
+  }, [history])
 
   return (
     <TerminalUI
