@@ -28,10 +28,8 @@
   "files": [
     "index.js",
     "lib",
-    "interfaces",
     "docs",
-    "webpack.config.js",
-    ".babelrc"
+    "dist"
   ],
   "scripts": {
     "lint": "eslint \"./**/*.{js,ts}\"",
@@ -43,7 +41,7 @@
     "process:start": "node lib/process.js",
     "interface:start": "webpack serve --mode development",
     "interface:build": "webpack --mode production",
-    "interface:build:start": "http-server ./interfaces/dist -p 3222 -o --silent",
+    "interface:build:start": "http-server ./dist -p 3222 -o --silent",
     "prepare": "husky install"
   },
   "dependencies": {
