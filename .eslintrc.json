@@ -24,7 +24,8 @@
     "jsx-quotes": ["error", "prefer-single"],
     "react/react-in-jsx-scope": "off",
     "react/jsx-key": "error",
-    "react/no-unescaped-entities": "off"
+    "react/no-unescaped-entities": "off",
+    "react/prop-types": "off"
   },
   "overrides": [
     {
