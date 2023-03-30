@@ -24,6 +24,8 @@ const TERMINAL_HEIGHT = 500
 
 const KEY_THEME = 'theme'
 
+const KEY_HISTORY = 'history'
+
 const BASIC_CMDS = ['mode --light', 'mode --dark', 'clear']
 
 module.exports = {
@@ -38,5 +40,6 @@ module.exports = {
   KEY_CODE_ARROW_UP,
   TERMINAL_HEIGHT,
   KEY_THEME,
+  KEY_HISTORY,
   BASIC_CMDS
 }

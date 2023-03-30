@@ -1,7 +1,9 @@
 const React = require('react')
-const { default: TerminalUI, TerminalInput, TerminalOutput } = require('react-terminal-ui')
+const { default: TerminalUI } = require('react-terminal-ui')
 
 const DefaultOutputs = require('./components/outputs')
+const Input = require('./components/input')
+const Output = require('./components/output')
 
 const { defaultTheme, switchTheme } = require('./utils/themes')
 const { APP_NAME, KEY_MODE, KEY_CLEAR, TERMINAL_HEIGHT, KEY_THEME } = require('./constants')
@@ -19,16 +21,14 @@ const App = () => {
 
   const grpInput = (input) => {
     const ipts = [...inputs]
-
-    ipts.push(<TerminalInput key={_id()}>{input}</TerminalInput>)
-
+    ipts.push(<Input key={_id()} value={input} />)
     setInputs(ipts)
   }
 
   const grpHistory = async (input) => {
     let lns = [...history]
 
-    lns.push(<TerminalInput key={_id()}>{input}</TerminalInput>)
+    lns.push(<Input key={_id()} value={input} />)
 
     if (input.toLocaleLowerCase().trim().slice(0, 4) === KEY_MODE) {
       const th = switchTheme(input)
@@ -39,13 +39,13 @@ const App = () => {
       lns = []
     } else if (input) {
       const cmdRes = await fetchCmd(input)
-      lns.push(<TerminalOutput key={_id()}>{cmdRes}</TerminalOutput>)
+      lns.push(<Output key={_id()} value={cmdRes} />)
     }
 
     setHistory(lns)
   }
 
-  const handleInput = async (input) => {
+  const handleInput = (input) => {
     grpInput(input)
     grpHistory(input)
   }
