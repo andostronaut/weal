@@ -14,7 +14,7 @@ const useTheme = () => {
   }
 
   React.useEffect(() => {
-    if (getSessionStorage(KEY_THEME) != undefined) {
+    if (getSessionStorage(KEY_THEME) !== undefined) {
       setTheme(getSessionStorage(KEY_THEME))
     } else {
       setTheme(defaultTheme)
