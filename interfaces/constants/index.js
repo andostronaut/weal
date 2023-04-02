@@ -9,6 +9,9 @@ const CMD_MODE_DARK = 'mode --dark'
 const LIGHT_THEME = 'light'
 const DARK_THEME = 'dark'
 
+const LIGHT_THEME_KEY = 0
+const DARK_THEME_KEY = 1
+
 const DEFAULT_OUTPUTS_LIST = [
   'Welcome to weal interface',
   '-------------------------',
@@ -40,6 +43,8 @@ module.exports = {
   CMD_MODE_DARK,
   LIGHT_THEME,
   DARK_THEME,
+  LIGHT_THEME_KEY,
+  DARK_THEME_KEY,
   DEFAULT_OUTPUTS_LIST,
   KEY_CODE_ARROW_UP,
   TERMINAL_HEIGHT,
