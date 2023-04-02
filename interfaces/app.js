@@ -1,15 +1,16 @@
 const React = require('react')
 const { default: TerminalUI } = require('react-terminal-ui')
 
-const { defaultTheme } = require('./utils/themes')
 const { APP_NAME, TERMINAL_HEIGHT } = require('./constants')
 
 const useHistory = require('./hooks/useHistory')
 const useInput = require('./hooks/useInput')
+const useTheme = require('./hooks/useTheme')
 
 const App = () => {
   const { history, groupHistory } = useHistory()
   const { groupInput } = useInput()
+  const { theme } = useTheme()
 
   const handleInput = (input) => {
     groupInput(input)
@@ -17,12 +18,7 @@ const App = () => {
   }
 
   return (
-    <TerminalUI
-      name={APP_NAME}
-      colorMode={defaultTheme}
-      onInput={handleInput}
-      height={TERMINAL_HEIGHT}
-    >
+    <TerminalUI name={APP_NAME} colorMode={theme} onInput={handleInput} height={TERMINAL_HEIGHT}>
       {history}
     </TerminalUI>
   )
