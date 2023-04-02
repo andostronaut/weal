@@ -50,13 +50,17 @@ const App = () => {
     grpHistory(input)
   }
 
-  React.useEffect(() => {
+  const pushDefaultOutputs = () => {
     const hs = [...history]
     if (Array.isArray(history) && history.length === 0) {
       hs.push(<DefaultOutputs key={_id()} />)
       setHistory(hs)
     }
-  }, [history])
+  }
+
+  React.useEffect(() => {
+    pushDefaultOutputs()
+  }, [])
 
   return (
     <TerminalUI
