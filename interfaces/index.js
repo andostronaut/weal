@@ -6,10 +6,10 @@ require('./styles/main.css')
 const rootElement = document.getElementById('root')
 const root = createRoot(rootElement)
 
-const App = require('./app')
+const App = React.lazy(() => import('./app'))
 
 root.render(
-  <React.StrictMode>
+  <React.Suspense fallback={<div>Loading...</div>}>
     <App />
-  </React.StrictMode>
+  </React.Suspense>
 )
