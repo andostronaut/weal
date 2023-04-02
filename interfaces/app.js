@@ -45,17 +45,17 @@ const App = () => {
     setHistory(lns)
   }
 
-  const handleInput = (input) => {
-    grpInput(input)
-    grpHistory(input)
-  }
-
   const pushDefaultOutputs = () => {
     const hs = [...history]
     if (Array.isArray(history) && history.length === 0) {
       hs.push(<DefaultOutputs key={_id()} />)
       setHistory(hs)
     }
+  }
+
+  const handleInput = (input) => {
+    grpInput(input)
+    grpHistory(input)
   }
 
   React.useEffect(() => {
