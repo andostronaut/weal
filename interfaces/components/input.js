@@ -4,9 +4,9 @@ const { TerminalInput } = require('react-terminal-ui')
 const { _id } = require('../utils/uuid')
 
 const Input = ({ value }) => {
-  const terminalInput = <TerminalInput key={_id()}>{value}</TerminalInput>
+  const input = <TerminalInput key={_id()}>{value}</TerminalInput>
 
-  return terminalInput
+  return input
 }
 
 module.exports = Input
