@@ -28,6 +28,10 @@ const KEY_HISTORY = 'history'
 
 const BASIC_CMDS = ['mode --light', 'mode --dark', 'clear']
 
+const DEFAULT_PROMPT = '$'
+
+const PWD_CMD = 'pwd'
+
 module.exports = {
   APP_NAME,
   KEY_MODE,
@@ -41,5 +45,7 @@ module.exports = {
   TERMINAL_HEIGHT,
   KEY_THEME,
   KEY_HISTORY,
-  BASIC_CMDS
+  BASIC_CMDS,
+  DEFAULT_PROMPT,
+  PWD_CMD
 }
