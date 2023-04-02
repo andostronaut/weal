@@ -10,12 +10,13 @@ const { fetchCmd } = require('../utils/fetch')
 
 const { _id } = require('../utils/uuid')
 
-const { KEY_MODE, KEY_CLEAR, KEY_THEME } = require('../constants')
+const { KEY_MODE, KEY_CLEAR } = require('../constants')
 
-const { setSessionStorage } = require('../utils/storage')
+const useTheme = require('./useTheme')
 
 const useHistory = () => {
   const [history, setHistory] = React.useState([])
+  const { setThemeOnStateAndSession } = useTheme()
 
   const groupHistory = async (input) => {
     let lines = [...history]
@@ -24,7 +25,7 @@ const useHistory = () => {
 
     if (input.toLocaleLowerCase().trim().slice(0, 4) === KEY_MODE) {
       const theme = switchTheme(input)
-      setSessionStorage(KEY_THEME, theme)
+      setThemeOnStateAndSession(theme)
     }
     if (input.toLocaleLowerCase().trim() === KEY_CLEAR) {
       lines = []
