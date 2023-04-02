@@ -15,3 +15,12 @@ body {
 .react-terminal:last-child {
   padding-bottom: 50px;
 }
+
+.loader-container {
+  background-color: #252a33;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
