@@ -16,7 +16,7 @@ module.exports = {
   },
   entry: './interfaces/index.js',
   output: {
-    filename: '[name].[contenthash].js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
   optimization: {
