@@ -35,6 +35,9 @@ const DEFAULT_PROMPT = '$'
 
 const PWD_CMD = 'pwd'
 
+const APP_LOADER_MSG = 'Checking process is ready...'
+const FALLBACK_LOADER_MSG = 'Sorry, please re-open directory on encountered an error'
+
 module.exports = {
   APP_NAME,
   KEY_MODE,
@@ -52,5 +55,7 @@ module.exports = {
   KEY_HISTORY,
   BASIC_CMDS,
   DEFAULT_PROMPT,
-  PWD_CMD
+  PWD_CMD,
+  APP_LOADER_MSG,
+  FALLBACK_LOADER_MSG
 }
