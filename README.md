@@ -43,6 +43,14 @@ Check version of weal with **version** command
 weal version
 ```
 
+## Tips
+
+On windows before installing it on global you need to set your config prefix to avoid error on open directory
+
+```bash
+npm config set prefix c:/Users/{userName}/AppData/Roaming/npm
+```
+
 ## Support
 
 Weal is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers.
