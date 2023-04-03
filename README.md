@@ -45,7 +45,7 @@ weal version
 
 ## Tips
 
-On windows before installing it on global you need to set your config prefix to avoid error on open directory
+On windows before installing it globally you need to set your config prefix to avoid error when opening directory
 
 ```bash
 npm config set prefix c:/Users/{userName}/AppData/Roaming/npm
