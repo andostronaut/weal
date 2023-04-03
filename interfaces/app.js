@@ -3,7 +3,7 @@ const { default: TerminalUI } = require('react-terminal-ui')
 
 const Loader = require('./components/loader')
 
-const { APP_NAME, TERMINAL_HEIGHT } = require('./constants')
+const { APP_NAME, TERMINAL_HEIGHT, APP_LOADER_MSG } = require('./constants')
 
 const useHistory = require('./hooks/useHistory')
 const useInput = require('./hooks/useInput')
@@ -23,7 +23,7 @@ const App = () => {
     groupHistory(input)
   }
 
-  if (!isReady) return <Loader />
+  if (!isReady) return <Loader msg={APP_LOADER_MSG} />
 
   return (
     <TerminalUI

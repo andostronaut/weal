@@ -22,6 +22,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .loader-container.dark {
@@ -30,4 +31,12 @@ body {
 
 .loader-container.light {
   background-color: #ddd;
+}
+
+.loader-container-msg.dark {
+  color: #fff;
+}
+
+.loader-container-msg.light {
+  color: #000;
 }

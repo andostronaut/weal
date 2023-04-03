@@ -6,7 +6,7 @@ const useTheme = require('../hooks/useTheme')
 
 const { LIGHT_THEME_KEY } = require('../constants')
 
-const Loader = () => {
+const Loader = ({ msg }) => {
   const { theme } = useTheme()
   const isLightTheme = theme === LIGHT_THEME_KEY
 
@@ -21,6 +21,7 @@ const Loader = () => {
         borderColor={isLightTheme ? '#000' : '#FFF'}
         barColor={isLightTheme ? '#000' : '#FFF'}
       />
+      <span className={`loader-container-msg ${isLightTheme ? 'light' : 'dark'}`}>{msg}</span>
     </div>
   )
 
