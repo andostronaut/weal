@@ -36,7 +36,7 @@ const DEFAULT_PROMPT = '$'
 const PWD_CMD = 'pwd'
 
 const APP_LOADER_MSG = 'Checking process is ready...'
-const FALLBACK_LOADER_MSG = 'Sorry, please re-open directory on encountered an error'
+const FALLBACK_LOADER_MSG = 'Sorry, please re-open directory we encountered an error'
 
 module.exports = {
   APP_NAME,
