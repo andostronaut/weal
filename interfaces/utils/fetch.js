@@ -13,9 +13,9 @@ const fetchCmd = async (input) => {
 
   try {
     const res = await fetch(`${ENV.BACKEND_URI}/process/${input}`)
-    const cmdRes = await res.text()
+    const { data } = await res.json()
 
-    return cmdRes
+    return data
   } catch (error) {
     console.error(error)
 
@@ -23,15 +23,4 @@ const fetchCmd = async (input) => {
   }
 }
 
-const fecthHealth = async () => {
-  try {
-    const res = await fetch(`${ENV.BACKEND_URI}/health`)
-    const { status } = await res.json()
-
-    return status
-  } catch (error) {
-    return false
-  }
-}
-
-module.exports = { fetchCmd, fecthHealth }
+module.exports = { fetchCmd }

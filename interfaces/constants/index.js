@@ -35,6 +35,8 @@ const DEFAULT_PROMPT = '$'
 
 const CURRENT_DIR_CMD = 'current-dir'
 
+const HEALTH_CMD = 'health'
+
 const APP_LOADER_MSG = 'Checking process is ready...'
 const FALLBACK_LOADER_MSG = 'Sorry, please re-open directory we encountered an error'
 
@@ -57,5 +59,6 @@ module.exports = {
   DEFAULT_PROMPT,
   CURRENT_DIR_CMD,
   APP_LOADER_MSG,
-  FALLBACK_LOADER_MSG
+  FALLBACK_LOADER_MSG,
+  HEALTH_CMD
 }
