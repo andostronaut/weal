@@ -28,18 +28,30 @@ yarn add global weal
 Now, you can open any directory via the command **open**
 
 ```bash
+# recommended
+npx weal open
+
+# using global installation
 weal open
 ```
 
 The following is the help text from the weal cli. To see this and more information anytime,add the **help** command to your call.
 
 ```bash
+# recommended
+npx weal help
+
+# using global installation
 weal help
 ```
 
 Check version of weal with **version** command
 
 ```bash
+# recommended
+npx weal version
+
+# using global installation
 weal version
 ```
 
