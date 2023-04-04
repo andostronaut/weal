@@ -33,7 +33,7 @@ const BASIC_CMDS = ['mode --light', 'mode --dark', 'clear']
 
 const DEFAULT_PROMPT = '$'
 
-const PWD_CMD = 'pwd'
+const CURRENT_DIR_CMD = 'current-dir'
 
 const APP_LOADER_MSG = 'Checking process is ready...'
 const FALLBACK_LOADER_MSG = 'Sorry, please re-open directory we encountered an error'
@@ -55,7 +55,7 @@ module.exports = {
   KEY_HISTORY,
   BASIC_CMDS,
   DEFAULT_PROMPT,
-  PWD_CMD,
+  CURRENT_DIR_CMD,
   APP_LOADER_MSG,
   FALLBACK_LOADER_MSG
 }
