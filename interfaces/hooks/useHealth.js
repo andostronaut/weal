@@ -1,12 +1,14 @@
 const React = require('react')
 
-const { fecthHealth } = require('../utils/fetch')
+const { fetchCmd } = require('../utils/fetch')
+
+const { HEALTH_CMD } = require('../constants')
 
 const useHealth = () => {
   const [isReady, setIsReady] = React.useState(false)
 
   const verifyHealth = async () => {
-    const status = await fecthHealth()
+    const status = await fetchCmd(HEALTH_CMD)
     if (status) {
       setIsReady(true)
     }
