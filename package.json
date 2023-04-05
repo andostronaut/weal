@@ -1,7 +1,7 @@
 {
   "name": "weal",
   "description": "Web interface for terminal",
-  "version": "1.3.5",
+  "version": "1.3.6",
   "license": "MIT",
   "bin": {
     "weal": "index.js"
