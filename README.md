@@ -8,7 +8,7 @@
 
 Web interface for terminal
 
-![Demo](docs/weal.png)
+![Demo](docs/demo.png)
 
 ## Install
 
