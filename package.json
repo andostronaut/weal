@@ -52,7 +52,7 @@
     "cli-meow-help": "^3.1.0",
     "cli-welcome": "^2.2.2",
     "cors": "^2.8.5",
-    "execa": "^4.1.0",
+    "execa": "^7.1.1",
     "express": "^4.18.2",
     "http-server": "^14.1.1",
     "meow": "^9.0.0",
